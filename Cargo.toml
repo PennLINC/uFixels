@@ -1,0 +1,24 @@
+[package]
+name = "ufixels"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.85"
+authors = ["Matt Cieslak <mattcieslak@gmail.com>"]
+license = "MIT OR Apache-2.0"
+description = "Surface-normal-driven detection of u-fiber-compatible fixels in superficial white matter."
+
+[dependencies]
+odx-rs = { git = "https://github.com/PennLINC/odx-rs", rev = "f83c6bf0726acd4e903ae126fdd82e0fb8f0cfaa" }
+gifti-rs = { git = "https://github.com/PennLINC/gifti-rs", rev = "e21a6c443afc6cc0742a1a0c96a77d0e329ff338", package = "gifti-rs" }
+nalgebra = "0.33"
+clap = { version = "4", features = ["derive"] }
+rayon = "1.10"
+thiserror = "2"
+anyhow = "1"
+
+[dev-dependencies]
+tempfile = "3"
+
+[[bin]]
+name = "ufixels"
+path = "src/bin/ufixels.rs"

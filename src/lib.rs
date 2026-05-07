@@ -5,8 +5,13 @@
 
 #![warn(rust_2018_idioms)]
 
+pub mod connectivity;
+pub mod cortex_kdtree;
 pub mod end_condition;
+pub mod no_end_mask;
 pub mod normal;
+pub mod sheet_link;
+pub mod sheets;
 pub mod surface_io;
 pub mod surface_mask;
 pub mod traversal;
@@ -14,7 +19,17 @@ pub mod ufixel;
 
 use std::sync::atomic::AtomicU8;
 
+pub use connectivity::{run_connectivity, ConnectivityConfig, ConnectivityResult};
+pub use cortex_kdtree::CortexKdTree;
 pub use end_condition::EndCondition;
+pub use no_end_mask::NoEndMask;
+pub use sheet_link::{
+    direction::{direction_gated_link, DirectionGatedParams},
+    filtration::{filtration_link, FiltrationParams},
+    merge_sheets, ptt_link::{ptt_continuation_link, PttLinkParams},
+    MergeEdge, MergeReason, SheetGraph, SuperSheetResult,
+};
+pub use sheets::{auto_select_eps, cluster_sheets, SheetEpsStats, SheetParams, SheetResult};
 pub use surface_mask::SurfaceVoxelSet;
 pub use traversal::VoxelGrid;
 pub use ufixel::{run_hemisphere, HemisphereOutputs};

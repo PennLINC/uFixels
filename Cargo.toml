@@ -7,9 +7,12 @@ authors = ["Matt Cieslak <mattcieslak@gmail.com>"]
 license = "MIT OR Apache-2.0"
 description = "Surface-normal-driven detection of u-fiber-compatible fixels in superficial white matter."
 
+
 [dependencies]
-odx-rs = { git = "https://github.com/PennLINC/odx-rs", rev = "f83c6bf0726acd4e903ae126fdd82e0fb8f0cfaa" }
-gifti-rs = { git = "https://github.com/PennLINC/gifti-rs", rev = "e21a6c443afc6cc0742a1a0c96a77d0e329ff338", package = "gifti-rs" }
+odx-rs           = { version = "0.1.0", git = "https://github.com/PennLINC/odx-rs",           tag = "v0.1.0" }
+gifti-rs         = { version = "0.1.0", git = "https://github.com/PennLINC/gifti-rs",         tag = "v0.1.0" }
+odx-tractography = { version = "0.1.0", git = "https://github.com/PennLINC/odx-tractography", tag = "v0.1.0" }
+kiddo = "5"
 nalgebra = "0.33"
 clap = { version = "4", features = ["derive"] }
 rayon = "1.10"
